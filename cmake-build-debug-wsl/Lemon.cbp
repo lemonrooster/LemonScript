@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/src/generation.hpp">
+			<Option target="lem"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/src/main.cpp">
+			<Option target="lem"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/src/parser.hpp">
 			<Option target="lem"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/src/tokenization.hpp">
