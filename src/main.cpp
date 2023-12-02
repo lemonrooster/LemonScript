@@ -12,7 +12,7 @@
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         std::cerr << "Incorrect Usage" << std::endl;
-        std::cerr << "./lem ../<input.lemon>" << std::endl;
+        std::cerr << "./lem ../<input.lms>" << std::endl;
         return EXIT_FAILURE;
     }
     std::string contents;
