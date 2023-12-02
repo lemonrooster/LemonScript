@@ -1,1 +1,1 @@
-return 22;
+exit 255;

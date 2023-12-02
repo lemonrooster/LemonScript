@@ -85,6 +85,9 @@
 		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/src/main.cpp">
 			<Option target="lem"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/src/tokenization.hpp">
+			<Option target="lem"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/lemon/Documents/Programming Projects/Lemon/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
