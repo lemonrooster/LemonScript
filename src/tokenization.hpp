@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <string>
@@ -8,7 +9,9 @@
 enum class TokenType {
     exit,
     int_lit,
-    semi
+    semi,
+    open_paren,
+    close_paren
 };
 
 struct Token {
@@ -32,10 +35,10 @@ public:
                 while (peek().has_value() && std::isalnum(peek().value())) {
                     buf.push_back(consume());
                 }
-                if (buf == "exit") {
+                if (buf== "exit") {
                     tokens.push_back({TokenType::exit});
                 } else {
-                    std::cerr << "Unrecognized identifier at index " << m_index << ": " << buf << std::endl;
+                    std::cerr << "Unrecognized identifier at index " << m_index << ": " << buf << std:: endl;
                     exit(EXIT_FAILURE);
                 }
                 buf.clear();
@@ -47,6 +50,14 @@ public:
                 tokens.push_back({TokenType::int_lit, buf});
                 buf.clear();
                 continue;
+            }
+            else if (peek().value() == '(') {
+                consume();
+                tokens.push_back({.type = TokenType::open_paren});
+            }
+            else if (peek().value() == ')') {
+                consume();
+                tokens.push_back({.type = TokenType::close_paren});
             }
             else if (peek().value() == ';') {
                 consume(); // Consume the ';' character
@@ -66,11 +77,11 @@ public:
     }
 
 private:
-    [[nodiscard]] inline std::optional<char> peek(int ahead = 0) const {
-        if (m_index + ahead >= m_src.length()) {
+    [[nodiscard]] inline std::optional<char> peek(int offset = 0) const {
+        if (m_index + offset >= m_src.length()) {
             return {};
         }
-        return m_src[m_index + ahead];
+        return m_src.at(m_index + offset);
     }
 
     inline char consume() {

@@ -1,1 +1,2 @@
-exit 25;
+let x = 7;
+exit(x);
